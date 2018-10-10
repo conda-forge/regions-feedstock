@@ -13,7 +13,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --offline --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -24,6 +24,7 @@ requirements:
   run:
     - python
     - astropy
+    - astropy-healpix
 
 test:
   imports:
@@ -49,3 +50,4 @@ extra:
   recipe-maintainers:
     - mwcraig
     - bsipocz
+    - cdeil
