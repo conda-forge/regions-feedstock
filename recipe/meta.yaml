@@ -25,6 +25,7 @@ requirements:
     - setuptools
   run:
     - python
+    - six
     - {{ pin_compatible('numpy') }}
     - astropy
     - astropy-healpix
