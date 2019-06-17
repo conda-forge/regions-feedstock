@@ -1,7 +1,7 @@
 {% set name = "regions" %}
-{% set version = "0.3" %}
+{% set version = "0.4" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "ec98751880020a3e0c861e43412c750240576b09882bd71cdeb67dbcb0ed7618" %}
+{% set hash_value = "cc301146ac975cc91577c8fbf8c8ceb60c3011e09607f0f1e65b7e1fdd6534bd" %}
 
 package:
   name: '{{ name|lower }}'
@@ -13,7 +13,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 1000
+  number: 0
   script: python setup.py install --offline --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -28,7 +28,6 @@ requirements:
     - six
     - {{ pin_compatible('numpy') }}
     - astropy
-    - astropy-healpix
 
 test:
   imports:
@@ -38,7 +37,7 @@ test:
     - regions.shapes
 
 about:
-  home: http://github.com/astropy/regions
+  home: https://github.com/astropy/regions
   license: BSD 3-clause
   license_family: BSD
   summary: Astropy affilated package for region handling
@@ -47,7 +46,7 @@ about:
     The goal is to merge the functionality from pyregion and photutils
     apertures and then after some time propose this package for inclusion in
     the Astropy core.
-  doc_url: http://astropy-regions.readthedocs.io
+  doc_url: https://astropy-regions.readthedocs.io
   dev_url: https://github.com/astropy/regions
 
 extra:
