@@ -28,7 +28,6 @@ requirements:
     - six
     - {{ pin_compatible('numpy') }}
     - astropy
-    - astropy-healpix
 
 test:
   imports:
@@ -38,7 +37,7 @@ test:
     - regions.shapes
 
 about:
-  home: http://github.com/astropy/regions
+  home: https://github.com/astropy/regions
   license: BSD 3-clause
   license_family: BSD
   summary: Astropy affilated package for region handling
@@ -47,7 +46,7 @@ about:
     The goal is to merge the functionality from pyregion and photutils
     apertures and then after some time propose this package for inclusion in
     the Astropy core.
-  doc_url: http://astropy-regions.readthedocs.io
+  doc_url: https://astropy-regions.readthedocs.io
   dev_url: https://github.com/astropy/regions
 
 extra:
