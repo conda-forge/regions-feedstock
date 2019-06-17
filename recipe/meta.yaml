@@ -1,7 +1,7 @@
 {% set name = "regions" %}
-{% set version = "0.3" %}
+{% set version = "0.4" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "ec98751880020a3e0c861e43412c750240576b09882bd71cdeb67dbcb0ed7618" %}
+{% set hash_value = "cc301146ac975cc91577c8fbf8c8ceb60c3011e09607f0f1e65b7e1fdd6534bd" %}
 
 package:
   name: '{{ name|lower }}'
@@ -13,7 +13,7 @@ source:
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
-  number: 1000
+  number: 0
   script: python setup.py install --offline --single-version-externally-managed --record=record.txt
 
 requirements:
