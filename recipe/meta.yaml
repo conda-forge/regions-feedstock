@@ -1,7 +1,5 @@
 {% set name = "regions" %}
 {% set version = "0.4" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "cc301146ac975cc91577c8fbf8c8ceb60c3011e09607f0f1e65b7e1fdd6534bd" %}
 
 package:
   name: '{{ name|lower }}'
@@ -10,10 +8,10 @@ package:
 source:
   fn: '{{ name }}-{{ version }}.tar.gz'
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  '{{ hash_type }}': '{{ hash_value }}'
+  'sha256': 'cc301146ac975cc91577c8fbf8c8ceb60c3011e09607f0f1e65b7e1fdd6534bd'
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --offline --single-version-externally-managed --record=record.txt
 
 requirements:
