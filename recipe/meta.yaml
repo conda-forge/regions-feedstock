@@ -8,11 +8,13 @@ package:
 source:
   fn: '{{ name }}-{{ version }}.tar.gz'
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  'sha256': 'cc301146ac975cc91577c8fbf8c8ceb60c3011e09607f0f1e65b7e1fdd6534bd'
+  sha256: cc301146ac975cc91577c8fbf8c8ceb60c3011e09607f0f1e65b7e1fdd6534bd
+  patches:
+    - setup.cfg.patch
 
 build:
-  number: 1
-  script: python setup.py install --offline --single-version-externally-managed --record=record.txt
+  number: 2
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -21,6 +23,7 @@ requirements:
     - python
     - numpy
     - setuptools
+    - pip
   run:
     - python
     - six
@@ -36,7 +39,7 @@ test:
 
 about:
   home: https://github.com/astropy/regions
-  license: BSD 3-clause
+  license: BSD-3-Clause
   license_file: LICENSE.rst
   license_family: BSD
   summary: Astropy affilated package for region handling
@@ -52,4 +55,3 @@ extra:
   recipe-maintainers:
     - mwcraig
     - bsipocz
-    - cdeil
