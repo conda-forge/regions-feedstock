@@ -23,6 +23,8 @@ requirements:
   host:
     - python
     - numpy
+    - cython =0.29.22
+    - extension-helpers
     - setuptools_scm
     - pip
   run:
