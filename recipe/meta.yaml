@@ -9,8 +9,6 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: ac89875ac8b52277322a54e952d3bd7d1f48510aaf342354e07df005996459ae
-  patches:
-    - setup.cfg.patch
 
 build:
   number: 0
