@@ -21,15 +21,16 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
-    - python
+    - python >=3.6
     - numpy
-    - setuptools
+    - setuptools_scm
     - pip
   run:
-    - python
-    - six
+    - python >=3.6
     - {{ pin_compatible('numpy') }}
-    - astropy
+    - astropy >=3.2
+    - matplotlib
+    - shapely
 
 test:
   imports:
