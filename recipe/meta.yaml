@@ -1,17 +1,15 @@
-{% set name = "regions" %}
 {% set version = "0.6" %}
 
 package:
-  name: {{ name|lower }}
+  name: regions
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/r/regions/regions-{{ version }}.tar.gz
   sha256: 80328580ae254f848db44048bc711365cab8dcfe47fa00b309ed35c27b5f255d
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py<38]
 
@@ -26,22 +24,20 @@ requirements:
     - python
     - pip
     - setuptools
-    - setuptools_scm
-    - cython >=0.29.22
+    - setuptools_scm >=6.2
+    - cython
     - extension-helpers
-    - numpy 1.18.*  # [py<39 and build_platform == target_platform and python_impl == 'cpython']
-    - numpy  # [py>=39 or build_platform != target_platform or python_impl == 'pypy']
+    - numpy
     - astropy >=5.0
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - numpy >=1.18
     - astropy >=5.0
     - matplotlib-base >=3.1
-    - pytest-astropy >=0.4
-    - pytest-arraydiff >=0.3
 
 test:
+  requires:
+    - pytest-astropy
   imports:
     - regions
     - regions.core
@@ -55,9 +51,9 @@ about:
   license_family: BSD
   summary: Astropy coordinated package for region handling
   description: |
-    Regions is an in-development package for region handling based on
-    Astropy. The eventual goal is to merge this package into the Astropy
-    core package.
+    Regions is a package for region handling based on Astropy. The
+    eventual goal is to merge this package into the Astropy core
+    package.
   doc_url: https://astropy-regions.readthedocs.io
   dev_url: https://github.com/astropy/regions
 
