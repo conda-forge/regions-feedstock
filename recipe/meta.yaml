@@ -1,4 +1,4 @@
-{% set version = "0.7" %}
+{% set version = "0.8" %}
 
 package:
   name: regions
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/regions/regions-{{ version }}.tar.gz
-  sha256: 75387ef2dfcca46c7716803a81c68dba3669005e01ddf6d0bf254edb677a9a23
+  sha256: 02b37f19533d30dcb053c2fb2e8d3b24a55d213acd7e7622a3df8874fe0d8024
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<38]
+  skip: true  # [py<39]
 
 requirements:
   build:
@@ -33,7 +33,7 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - astropy >=5.0
-    - matplotlib-base >=3.1
+    - matplotlib-base >=3.5
 
 test:
   requires:
