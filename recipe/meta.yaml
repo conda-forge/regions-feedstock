@@ -9,7 +9,7 @@ source:
   sha256: 260e1848f42269da69769d7fb7e0494b0dfbd6bdb5d1d3e0dd6c0f9ff16f6e4f
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py<310]
 
@@ -20,6 +20,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -31,7 +32,6 @@ requirements:
     - astropy >=5.1
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - astropy >=5.1
     - matplotlib-base >=3.5
 
