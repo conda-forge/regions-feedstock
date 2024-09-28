@@ -1,4 +1,4 @@
-{% set version = "0.9" %}
+{% set version = "0.10" %}
 
 package:
   name: regions
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/regions/regions-{{ version }}.tar.gz
-  sha256: 260e1848f42269da69769d7fb7e0494b0dfbd6bdb5d1d3e0dd6c0f9ff16f6e4f
+  sha256: 961c518ea044268de0003a17953de3d4984623e9d47ad5424c100f6967e69a81
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py<310]
 
