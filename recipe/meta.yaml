@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/r/regions/regions-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/r/regions/regions-{{ version }}.tar.gz
   sha256: 961c518ea044268de0003a17953de3d4984623e9d47ad5424c100f6967e69a81
 
 build:
