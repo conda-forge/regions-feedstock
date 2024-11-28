@@ -9,7 +9,7 @@ source:
   sha256: 961c518ea044268de0003a17953de3d4984623e9d47ad5424c100f6967e69a81
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py<310]
 
@@ -29,10 +29,10 @@ requirements:
     - cython
     - extension-helpers
     - numpy
-    - astropy >=5.1
+    - astropy-base >=5.1
   run:
     - python
-    - astropy >=5.1
+    - astropy-base >=5.1
     - matplotlib-base >=3.5
 
 test:
