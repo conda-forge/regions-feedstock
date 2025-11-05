@@ -11,7 +11,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<310]
+  skip: true  # [py<311]
 
 requirements:
   build:
@@ -29,10 +29,10 @@ requirements:
     - cython
     - extension-helpers
     - numpy
-    - astropy-base >=5.1
+    - astropy-base >=6.0
   run:
     - python
-    - astropy-base >=5.1
+    - astropy-base >=6.0
     - matplotlib-base >=3.5
 
 test:
